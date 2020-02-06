@@ -1,82 +1,71 @@
-import React, {Component} from 'react';
-import ioledLogo from '../../images/logo.png';
-
-// import {connect} from 'react-redux';
+import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Avatar from '@material-ui/core/Avatar';
+
+import ioledLogo from '../../images/logo.png';
 import {Box} from '@material-ui/core';
 
-import {createStyles} from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
-const styles = (theme) =>
-  createStyles({
-    root: {
-      position: 'relative',
-    },
-    appbar: {
-      backgroundColor: '#1A191E',
-      display: 'grid',
-    },
-    logo: {
-      width: '51px',
-      margin: '-10px',
-    },
+const styles = makeStyles((theme) => ({
+  appbar: {
+    backgroundColor: '#1A191E',
+    display: 'grid',
+  },
+  ioledDashboard: {
+    display: 'grid',
+    color: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: '10vh',
+  },
+  ioledTittle: {
+    fontSize: '16px',
+    marginTop: '10px',
+    fontWeight: 'bold',
+    marginLeft: '13px',
+  },
+  dashboard: {
+    fontSize: '14px',
+    marginTop: '-5px',
+    fontWeight: 'ligthter',
+  },
+  avatar: {
+    margin: '0 10px',
+  },
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-    ioledDashboard: {
-      display: 'grid',
-      color: 'white',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginRight: '10vh',
-    },
-    ioledTittle: {
-      fontSize: '16px',
-      marginTop: '10px',
-      fontWeight: 'bold',
-      marginLeft: '13px',
-    },
-    dashboard: {
-      fontSize: '14px',
-      marginTop: '-5px',
-      fontWeight: 'ligthter',
-    },
-  });
+function Navbar() {
+  const classes = styles();
 
-class Navbar extends Component {
-  // Component state.
-  state = {
-    rigth: false,
-  };
-
-  // Render the component.
-  render() {
-    // const {classes} = this.props;
-    // const {rigth} = this.state;
-
-    return (
-      <div className={styles.root}>
-        <AppBar className={styles.appbar} position="static">
-          <Toolbar>
-            <a href={'/'} style={{flexGrow: 1}}>
-              <img className={styles.logo} src={ioledLogo} alt="ioled" />
-            </a>
-
-            <Box className={styles.ioledDashboard}>
-              <b className={styles.ioledTittle}> iOLED</b>
-              <p className={styles.dashboard}>DASHBOARD</p>
-            </Box>
-
-            {/* <Avatar className={styles.avatar} alt={user.name} src={user.photo} onClick="{this.toggleDrawer(true)}" /> */}
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
+  return (
+    <div className={classes.root}>
+      <AppBar className={classes.appbar} position="static">
+        <Toolbar>
+          <a href={'/'} style={{flexGrow: 1}}>
+            <img className={classes.logo} src={ioledLogo} alt="ioled" />
+          </a>
+          <Box className={classes.ioledDashboard}>
+            <b className={classes.ioledTittle}> iOLED</b>
+            <p className={classes.dashboard}>DASHBOARD</p>
+          </Box>
+          <Avatar className={classes.avatar} />
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
 
-const mapStateToProps = ({user}) => {
-  return {user};
-};
-
-export default Navbar;
+export default withStyles(styles)(Navbar);
