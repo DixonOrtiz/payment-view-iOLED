@@ -1,7 +1,8 @@
 import React from 'react';
+import Navbar from './Payment/Navbar';
 
 function App() {
-  return <div className="App">Payment View</div>;
+  return <Navbar />;
 }
 
 export default App;
