@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Avatar from '@material-ui/core/Avatar';
 
-import ioledLogo from '../../images/logo.png';
+import ioledLogo from '../../../images/logo.png';
 import {Box} from '@material-ui/core';
 
 import {withStyles} from '@material-ui/core/styles';
