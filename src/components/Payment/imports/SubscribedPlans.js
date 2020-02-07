@@ -52,7 +52,6 @@ function SubscribedPlans() {
           <span className={classes.priceplan}>$36.990</span> al mes
         </Box>
       </Box>
-      ;
     </div>
   );
 }
