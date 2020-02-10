@@ -3,6 +3,8 @@ import Navbar from './imports/Navbar';
 import PayDate from './imports/PayDate';
 import SubscribedPlans from './imports/SubscribedPlans';
 import PaymentBill from './imports/PaymentBill';
+import MonthlyPayment from './imports/MonthlyPayment';
+// import Menu from './imports/Menu';
 
 import {makeStyles} from '@material-ui/core/styles';
 import {withStyles} from '@material-ui/core/styles';
@@ -23,6 +25,8 @@ function Payment() {
         <PayDate />
         <SubscribedPlans />
         <PaymentBill />
+        <MonthlyPayment />
+        {/* <Menu /> */}
       </div>
     </React.Fragment>
   );
